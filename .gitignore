@@ -1,5 +1,4 @@
-climate_trends/
-*.csv
+
 *.tif
 *.html
 .ipynb_checkpoints/
