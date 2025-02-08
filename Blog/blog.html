@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assam District Combined Plots</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center; /* Center-align text */
+        }
+        #plot-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center; /* Center-align the image */
+        }
+        img {
+            max-width: 50%;
+            height: auto;
+        }
+        select {
+            font-size: 16px;
+            padding: 5px;
+            margin-top: 10px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Assam District Combined Plots</h1>
+    <label for="district-select">Select a district:</label>
+    <select id="district-select" onchange="updatePlot()">
+        <option value="">--Select a district--</option>
+        <!-- Options will be populated by JavaScript -->
+    </select>
+    <div id="plot-container">
+        <img id="plot-image" src="/Users/prreddy/Projects/Blog/plots/Assam_yearly_climate_trends.png" alt="Select a district to view the plot">
+    </div>
+
+    <script>
+        // List of district names (you can add more district names as needed)
+        const districts = [
+            "Barpeta", "Bongaigaon", "Cachar", "Darrang", "Dhemaji", "Dhubri", "Dibrugarh", "Goalpara", "Golaghat",
+            "Hailakandi", "Jorhat", "Kamrup", "Karbi Anglong", "Karimganj", "Kokrajhar", "Lakhimpur", "Marigaon",
+            "Nagaon", "Nalbari", "Sibsagar", "Sonitpur", "Tinsukia"
+        ];
+
+        // Populate the dropdown menu with district names
+        const districtSelect = document.getElementById("district-select");
+        districts.forEach(district => {
+            const option = document.createElement("option");
+            option.value = district;
+            option.textContent = district;
+            districtSelect.appendChild(option);
+        });
+
+        // Function to update the plot based on the selected district
+        function updatePlot() {
+            const selectedDistrict = districtSelect.value;
+            const plotImage = document.getElementById("plot-image");
+            if (selectedDistrict) {
+                plotImage.src = `/Users/prreddy/Projects/Blog/plots/Assam_district_combined_plots/${selectedDistrict}_combined_trends.png`;
+                plotImage.alt = `${selectedDistrict} Combined Trends Plot`;
+            } else {
+                plotImage.src = "/Users/prreddy/Projects/Blog/plots/Assam_yearly_climate_trends.png";
+                plotImage.alt = "Select a district to view the plot";
+            }
+        }
+    </script>
+</body>
+</html>
