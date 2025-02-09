@@ -3,12 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assam District Combined Plots</title>
+    <title>My Blog</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
             text-align: center; /* Center-align text */
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
         }
         #plot-container {
             margin-top: 20px;
@@ -16,8 +38,14 @@
             justify-content: center; /* Center-align the image */
         }
         img {
-            max-width: 50%;
+            max-width: 90%;
             height: auto;
+        }
+        
+        .small-image {
+            max-width: 50%; /* Adjust the percentage as needed */
+            height: auto;
+            align-items: center;
         }
         select {
             font-size: 16px;
@@ -27,52 +55,382 @@
         h1 {
             font-size: 24px;
             margin-bottom: 20px;
+            text-align: center;
+        }
+        article h3 {
+            font-size: 16px;
+            text-align: center;
         }
         label {
             font-size: 18px;
         }
+        article {
+            background-color: #fff;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            text-align: left;
+        }
+        article h2 {
+            font-size: 18px;
+            margin-top: 0;
+            text-align: center;
+        }
+        article p {
+            max-width: 700px; /* Reduce the width of the paragraphs */
+            margin: 0 auto; /* Center-align the paragraphs */
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        #timelapse-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #timelapse {
+            max-width: 60%;
+            height: auto;
+            margin: 20px auto;
+            align-items: center;
+            
+        }
+        #year {
+            font-size: 24px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        #legend {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+        .color-box {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
-    <h1>Assam District Combined Plots</h1>
-    <label for="district-select">Select a district:</label>
-    <select id="district-select" onchange="updatePlot()">
-        <option value="">--Select a district--</option>
-        <!-- Options will be populated by JavaScript -->
-    </select>
-    <div id="plot-container">
-        <img id="plot-image" src="/Users/prreddy/Projects/Blog/plots/Assam_yearly_climate_trends.png" alt="Select a district to view the plot">
-    </div>
-
+    <header>
+        <h1>Indian Climate Blog</h1>
+    </header>
+    <main>
+        <article>
+            <h1>Climate Change in India: A Nation at the Crossroads</h1>
+            <p>India’s climate has always been diverse, with scorching summers, intense monsoons, and chilly winters. However, in the last two decades, climate change has intensified extreme weather events, making floods, heatwaves, and droughts more frequent and severe. From glacier melting in the Himalayas to unpredictable monsoons in the South, these changes have caused widespread destruction, threatening agriculture, biodiversity, and human settlements. The effects of climate change are particularly visible in five key states: Assam, Kerala, Uttarakhand, Rajasthan, and Madhya Pradesh. Each of these states has faced climate-related disasters between 2000 and 2020, significantly impacting the lives of millions. This blog explores real-life events from these states to understand how climate change is reshaping India.<br><br>
+                <div id="plot-container">
+                    <img id="plot-image" src="plots/yearly_rainfall_india_2000.png" class="small-image">
+                </div>
+                <div id="plot-container">
+                    <img id="plot-image" src="plots/yearly_temperature_india_2000.png" class="small-image" >
+                </div>
+                Climate change in India manifests in multiple ways, each with profound consequences for the environment and society. Rising temperatures have led to increasingly frequent and intense heatwaves, especially in northern and central India. Cities like Delhi and Jaipur have recorded temperatures above 50°C, posing severe health risks and reducing agricultural productivity. In contrast, parts of the Himalayan region are experiencing glacial retreat, threatening water security for millions who rely on glacier-fed rivers. The monsoon, India’s lifeline, has also become more erratic, with shorter yet more intense bursts of rainfall leading to devastating floods in states like Assam, Bihar, and Kerala, while prolonged dry spells cause droughts in Maharashtra and Rajasthan. These shifting weather patterns are disrupting traditional farming cycles, leading to crop failures, food insecurity, and economic distress for millions of farmers.<br><br>
+                Beyond extreme weather, climate change is also affecting ecosystems and biodiversity across India. Rising sea levels are eroding coastal communities, with regions like the Sundarbans losing land to encroaching waters, forcing thousands to migrate inland. In states like Madhya Pradesh and Chhattisgarh, large-scale deforestation is worsening environmental degradation, reducing natural carbon sinks and increasing the frequency of wildfires. Meanwhile, changing rainfall patterns and rising temperatures are causing shifts in forest cover and wildlife populations, with species like tigers and elephants facing habitat loss. These interconnected challenges highlight the urgent need for India to adopt climate resilience measures, strengthen disaster preparedness, and transition to sustainable energy solutions before the consequences become irreversible.<br><br>
+                 </p>
+            <br>
+            <h2>Timelapse of India's Temperatures (2000-2020)</h2>
+            <div id="timelapse-container">
+                <img id="timelapse" src="" alt="Temperature Timelapse" class="small-image">
+                <div id="year"></div>
+            </div>   
+            <div id="legend">
+                <div class="legend-item">
+                    <div class="color-box" style="background-color: blue;"></div>
+                    <span>10°C</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background-color: cyan;"></div>
+                    <span>20°C</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background-color: yellow;"></div>
+                    <span>30°C</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background-color: orange;"></div>
+                    <span>40°C</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box" style="background-color: red;"></div>
+                    <span>50°C</span>
+                </div>
+            </div>
+            <br><br>
+            <h2>Assam: Drowning in Disaster – The Rising Fury of Floods (2000–2020)</h2>
+            <p>Flooding in Assam has long been a natural occurrence, but in recent decades, it has intensified in both frequency and severity. The Brahmaputra River, a crucial lifeline for the state, has increasingly spilled beyond its banks, fueled by excessive rainfall and glacial melt from the Himalayas. Despite a slight decline in total precipitation between 2000 and 2020, the extent of flooding has grown, highlighting a troubling shift in how rainfall is distributed. Instead of steady monsoon rains spread across months, Assam now experiences shorter, more intense bursts of rainfall, overwhelming drainage systems and increasing flood risks. The 2012 and 2017 Assam floods displaced millions and submerged more than 50% of Kaziranga National Park, endangering wildlife. The 2020 Assam floods were even more catastrophic, affecting over 5.7 million people, destroying 150,000 hectares of crops, and leaving communities devastated.<br><br></p>
+            <div id="plot-container">
+                <img id="plot-image" src="plots/Assam_yearly_climate_trends.png" >
+            </div>
+            <br>
+            <p>However, it is not just floods that are changing Assam’s climate—the state is also experiencing a drastic rise in temperatures. Assam’s summers have become longer and hotter, with more frequent and extreme heatwaves. In 2022, Guwahati recorded its hottest April in history, with temperatures soaring past 40°C—unprecedented for a state known for its relatively moderate climate. The rising heat has had devastating effects on human health, with an increase in heatstroke cases and dehydration-related illnesses. Schools in Guwahati and other districts were forced to shut down early due to unbearable temperatures. Farmers, particularly tea growers, have suffered immensely, as the famous Assam tea plantations struggle to cope with prolonged dry spells and scorching heat. Tea plants, which thrive in humid conditions, have shown signs of heat stress, reducing both yield and quality, threatening the livelihoods of thousands of workers dependent on the industry.<br><br></p>
+            <div id="plot-container">
+                <img id="plot-image" src="plots/Assam_monthly_rainfall_1985_2000_2020.png" >
+            </div>
+            <p> Assam’s broader climate is undergoing significant transformations. Average temperatures have steadily risen, making summers hotter and intensifying evaporation rates. In 2020, Guwahati recorded one of its highest temperatures in history, exacerbating water shortages in non-monsoon months. Meanwhile, tree cover has remained relatively stable, but increasing urbanization and deforestation in key areas have weakened the region’s natural flood absorption capacity. These changes have directly impacted Assam’s agricultural sector, particularly the tea industry, which relies on moderate temperatures and consistent rainfall. Instead of the predictable monsoons tea plantations once depended on, farmers now face long dry spells followed by sudden heavy downpours, leading to lower yields and declining tea quality. With both extreme floods and erratic rainfall becoming the norm, Assam’s economic and ecological stability hangs in the balance, making climate resilience and sustainable land management more urgent than ever.<br><br> </p>
+            <p></p>
+            <label for="assam-district-select">Visualize the climate in a district of Assam:</label>
+            <select id="assam-district-select" onchange="updateAssamPlot()">
+                <option value="">--Select a district--</option>
+            </select>
+            <div id="plot-container">
+                <img id="assam-plot-image" src="plots/Assam_yearly_climate_trends.png" alt="Select a district to view the plot">
+            </div>
+            <br>
+            <div class="section">
+                <h2>Kerala: Drowning in Extremes – The New Face of Monsoon</h2>
+                <div id="plot-container">
+                    <img id="plot-image" src="plots/kerala_yearly_climate_trends.png" >
+                </div>
+                <p>Kerala, often referred to as "God's Own Country," has long been known for its lush greenery, rolling hills, and life-sustaining monsoons. However, in recent decades, the state’s climate has shifted dramatically, bringing erratic rainfall, rising temperatures, and increased flood risks. Once characterized by steady monsoons spread over months, Kerala now experiences short bursts of extreme rainfall, triggering flash floods and deadly landslides. These sudden downpours overwhelm rivers and reservoirs, causing water levels to rise dangerously fast. The 2018 Kerala floods, the worst in nearly a century, left over 400 people dead, displaced more than a million residents, and caused economic losses exceeding ₹40,000 crore ($5.6 billion). The following year, 2019 brought yet another flood and multiple landslides, killing over 100 people and further exposing the state's vulnerability to changing monsoon patterns.<br><br></p>
+                <div id="plot-container">
+                    <img src="images/flood-kerala2016.jpg" alt="Kerala Flood 2016" class="small-image">
+                    <img src="images/floodsKerala2017.avif" alt="Kerala Flood 2017" class="small-image"><br><br>
+                </div><br><br>
+                <p>While heavy rainfall is not new to Kerala, what has changed is the intensity and unpredictability of precipitation. Climate data shows that Kerala is experiencing shorter yet more intense monsoon bursts, with some regions receiving a month’s worth of rainfall in just a few days. Meanwhile, during non-monsoon months, the state has seen longer dry spells and drought-like conditions. This contrast has put immense pressure on Kerala’s water resources, agriculture, and infrastructure. Rising temperatures have worsened the situation, with cities like Thiruvananthapuram and Kochi recording some of their highest-ever summer temperatures in recent years. The combination of rising heat and extreme rainfall has also affected Kerala’s forests, with increased soil erosion, tree loss, and habitat destruction. Deforestation, particularly in the Western Ghats, has contributed to worsening landslides, as tree roots that once held the soil together have been removed due to human expansion.<br><br></p>
+                <div id="plot-container">
+                    <img id="plot-image" src="plots/kerala_monthly_rainfall_2000_2020.png" >
+                </div>
+                <p>The impact of these changes is visible in both urban and rural Kerala. In Munnar, a region once known for its cool climate and tea estates, unpredictable rainfall and rising temperatures have altered farming cycles, reducing tea production. In Kozhikode and Ernakulam, frequent floods have displaced thousands, damaging homes and businesses. The famous Periyar River, a crucial water source, has seen dangerously fluctuating water levels, causing distress to both farmers and hydropower projects. If Kerala continues to face uncontrolled deforestation, urban expansion, and extreme weather events, the state’s resilience will be tested like never before. The shift from a stable monsoon climate to one of unpredictability and destruction serves as a stark reminder of the growing urgency to implement sustainable flood management, reforestation, and climate adaptation policies to secure Kerala’s future.</p><br><br>
+                <label for="kerala-district-select">Visualize the climate in a district of Kerala:</label>
+                <select id="kerala-district-select" onchange="updateKeralaPlot()">
+                    <option value="">--Select a district--</option>
+                </select>
+            <div id="plot-container">
+                <img id="kerala-plot-image" src="plots/Kerala_yearly_climate_trends.png" alt="Select a district to view the plot">
+            </div>
+                <br><br>
+            </div>
+            <div class="section">
+                <h2>Uttarakhand: Melting Glaciers and Deadly Floods</h2>
+                <div id="plot-container">
+                    <img id="uttarakhand-plot" src="plots/Uttarakhand_yearly_climate_trends.png" >
+                </div>
+                <p>Uttarakhand, nestled in the Himalayas, has long been a region defined by its majestic glaciers, sacred rivers, and breathtaking landscapes. However, in the last two decades, this very landscape has become increasingly fragile due to rising temperatures, erratic weather patterns, and intensified glacial melting. Climate change has triggered more frequent and extreme rainfall events, leading to catastrophic floods and landslides. One of the most devastating disasters occurred in 2013, when a cloudburst over the Chorabari Glacier caused unprecedented flooding in Kedarnath. The Mandakini River swelled uncontrollably, wiping out entire towns, killing over 5,700 people, and leaving thousands stranded. Scientists attributed this tragedy to rising temperatures, which had already weakened the glacier, making it more susceptible to rapid melting and collapse.<br><br> </p>
+                <div id="plot-container">
+                    <img id="uttarakhand-plot" src="plots/top_5_flood_heavy_districts.png" >
+                </div>
+                <p>Beyond extreme floods, Uttarakhand has witnessed a steady decline in glacial health and snowfall patterns. The Gangotri Glacier, one of the primary sources of the Ganges River, has been retreating at an alarming rate of 20–22 meters per year, raising concerns over long-term water security for millions in northern India. The state has also seen an increase in glacial lake outbursts, where rapidly melting ice forms unstable lakes that can burst, sending torrents of water downstream. This phenomenon has led to deadly landslides, with villages near riverbanks constantly under threat. A stark example is the 2021 Chamoli disaster, where a glacial collapse triggered a massive flood in the Rishiganga and Dhauliganga rivers, destroying hydroelectric projects and killing over 200 people. Experts warn that such events will only become more frequent as Himalayan glaciers continue to melt at record speeds.<br><br> </p>
+                <div id="plot-container">
+                <img src="images/Uttarakand_glacir_melt.png" alt="Kerala Flood 2016" class="small-image">
+                </div><br><br>
+                <p>Rising temperatures have also affected Uttarakhand’s forests and biodiversity. Higher altitudes, once too cold for many species, are now experiencing encroachment by invasive plants and animals, disrupting the delicate mountain ecosystem. Additionally, warmer winters and reduced snowfall have impacted tourism and agriculture, with apple orchards in regions like Nainital and Almora reporting lower yields due to inconsistent cold spells. The once-predictable climate cycles of the Himalayas are rapidly changing, leaving local communities to grapple with extreme heat, unexpected floods, and declining natural resources. Uttarakhand’s spiritual and ecological heritage is at risk, making urgent climate adaptation, glacial conservation efforts, and sustainable land management critical for the future of this fragile Himalayan state.<br><br></p>
+                <label for="uttarakhand-district-select">Visualize the climate in a district of Uttarakhand:</label>
+                <select id="uttarakhand-district-select" onchange="updateUttarakhandPlot()">
+                <option value="">--Select a district--</option>
+            </select>
+            <div id="plot-container">
+                <img id="uttarakhand-plot-image" src="plots/Uttarakhand_yearly_climate_trends.png" alt="Select a district to view the plot">
+            </div>
+                <br>
+            </div>
+            <div class="section">
+                <h2>Rajasthan: Scorching Summers, Water Crisis, and the Battle for Survival</h2>
+                <div id="plot-container">
+                    <img id="uttarakhand-plot" src="plots/Rajasthan_yearly_climate_trends.png" >
+                </div>
+                <p>Rajasthan, India’s driest state, has always been known for its arid deserts and extreme climate, but the last two decades have seen a dramatic escalation in heatwaves, water shortages, and crop failures. As global temperatures continue to rise, Rajasthan has been at the frontline of climate change’s most unforgiving impacts. Between 2000 and 2020, the state has experienced longer and more intense heatwaves, pushing temperatures to record-breaking levels. In 2016, the town of Phalodi recorded 51°C, the highest temperature ever recorded in India. Cities like Jaipur, Jaisalmer, and Barmer have witnessed increasingly frequent days where temperatures soar beyond 48°C, making outdoor work nearly impossible. The relentless heat has resulted in a sharp rise in heatstroke cases, water shortages, and agricultural losses, forcing many farmers and laborers to migrate in search of better living conditions.<br><br></p>
+                <div id="plot-container">
+                    <img id="uttarakhand-plot" src="plots/jodhpur_monthly_temperatures_2015_2017.png">
+                </div>
+                <div id="plot-container">
+                    <img id="uttarakhand-plot" src="plots/yearly_average_temperature_rajasthan_1981_2023.png">
+                </div>
+                <p>Beyond the heat, Rajasthan is also experiencing severe and recurring droughts. Once manageable dry spells have stretched into years-long water crises, leaving districts like Barmer, Jaisalmer, and Bikaner struggling to meet basic water demands. Groundwater levels, which once sustained local communities, have plummeted due to over-extraction and reduced monsoon rainfall. Farmers, who traditionally grew crops like wheat and mustard, have been forced to switch to drought-resistant varieties, while some have abandoned farming altogether. The 2015–2018 drought period saw thousands of villages face critical water shortages, with the government having to supply drinking water through tanker trucks. Ponds, wells, and even major reservoirs like Bisalpur have dried up faster than ever before, leaving both urban and rural populations in distress.<br><br></p>
+                <div id="plot-container">
+                    <img id="uttarakhand-plot" src="plots/monthly_rainfall_histograms_2000_2012_2020.png">
+                </div>
+                <p>Adding to the crisis, Rajasthan’s tree cover and vegetation have also been under threat. Rising temperatures and declining rainfall have led to desertification, pushing the Thar Desert further into previously habitable areas. Many regions that once had scrub forests or grasslands are now barren, with soil moisture levels dropping dangerously low. The Aravalli Hills, which once acted as a natural climate buffer, have been rapidly deforested, further accelerating land degradation and reducing the state’s resilience to climate extremes. The combination of scorching heat, failing water sources, and agricultural collapse is making life in Rajasthan increasingly difficult. Without urgent water conservation efforts, afforestation programs, and heat mitigation strategies, Rajasthan could soon face one of the worst climate-induced crises in India’s history.<br><br> </p>
+                <p>It can be observed from the below graphs that overall despite all these crisis faced by Rajasthan the government is taking actions to ensure that the tree cover is generally increasing in most areas.There is a unifrom drop in temperature over all districts with a rise in precipitation with the increase in tree cover.We can attribute it as such by observing districts such as jaisalmer with minimum tree cover reulting in random heat waves and large scale spikes in temperature and decrease in precipitation.<br><br> </p>
+                <label for="rajasthan-district-select">Visualize the climate in a district of Rajasthan:</label>
+                <select id="rajasthan-district-select" onchange="updateRajasthanPlot()">
+                <option value="">--Select a district--</option>
+                </select>
+                <div id="plot-container">
+                <img id="rajasthan-plot-image" src="plots/Rajasthan_yearly_climate_trends.png" alt="Select a district to view the plot">
+            </div>
+            </div>
+            <div class="section">
+                <h2>Madhya Pradesh: Vanishing Forests, Drying Rivers, and Climate Extremes</h2>
+                <div id="plot-container">
+                    <img id="madhya-pradesh-plot" src="plots/Madhya Pradesh_yearly_climate_trends.png" alt="Select a district to view the plot">
+                </div>
+                <p>Madhya Pradesh, often referred to as the "Heart of India," has long been home to vast forests, fertile lands, and life-giving rivers. However, in the past two decades, the state has faced rapid deforestation, erratic rainfall, and rising temperatures, disrupting both its ecology and economy. Between 2001 and 2020, Madhya Pradesh lost over 500,000 hectares of forest cover, primarily due to urban expansion, illegal logging, and climate stress. This large-scale tree loss has had far-reaching consequences, contributing to higher temperatures, declining monsoon rains, and worsening soil degradation. Regions that once enjoyed moderate temperatures and a stable monsoon cycle are now facing longer dry spells and unseasonal weather events, making agriculture increasingly difficult.<br><br> </p>
+                <p>Ironically, even as dry spells have increased, sudden, intense rainfall events have become more frequent. The 2019 and 2020 monsoons brought unprecedented downpours, causing severe urban flooding in Bhopal and Indore. Cities struggled to drain excess water, leading to damaged roads, submerged homes, and loss of livelihoods. Meanwhile, in rural areas, a different crisis is unfolding—rivers and lakes are drying up at alarming rates. The Narmada River, considered the lifeline of Madhya Pradesh, has seen reduced water flow during the summer months, severely impacting both agriculture and drinking water supplies. Farmers in Malwa and Bundelkhand, once reliant on predictable monsoons, now face frequent crop failures and groundwater shortages, forcing many to migrate to cities in search of work.<br><br></p>
+                <p>The impact of these climate shifts is visible across the state. Wildlife habitats in Kanha and Satpura National Parks are shrinking, and rising temperatures are pushing species like tigers and leopards into conflict with human settlements. Meanwhile, tribal communities that depend on forests for their livelihoods are struggling as tree cover declines. If deforestation continues unchecked and climate adaptation strategies are not implemented, Madhya Pradesh could soon face a dual crisis of extreme heat and water scarcity. The state urgently needs afforestation programs, sustainable water management, and long-term climate resilience planning to secure its environmental and economic future.<br><br></p>
+                <label for="madhya-pradesh-district-select">Visualize the climate in a district of Madhya Pradesh:</label>
+                <select id="madhya-pradesh-district-select" onchange="updateMadhyaPradeshPlot()">
+                    <option value="">--Select a district--</option>
+                </select>
+                <div id="plot-container">
+                    <img id="madhya-pradesh-plot-image" src="plots/Madhya Pradesh_yearly_climate_trends.png" alt="Select a district to view the plot">
+                </div>
+                <br>
+            </div>
+            <div class="section">
+                <h2>Conclusion: Climate Change is No Longer a Future Threat—It’s Here</h2>
+                <p>Between 2000 and 2020, the five states of Assam, Kerala, Uttarakhand, Rajasthan, and Madhya Pradesh have experienced climate disasters that were once considered rare, but are now alarmingly frequent. From catastrophic floods in Assam and Kerala to melting glaciers in Uttarakhand, record-breaking heatwaves in Rajasthan, and deforestation-driven droughts in Madhya Pradesh, the evidence is undeniable—climate change is no longer a future concern; it is reshaping India today. The data paints a stark reality, with rising temperatures, erratic rainfall patterns, glacier retreat, and large-scale deforestation, all contributing to intensifying climate extremes.<br><br></p>
+                <p>The real-life events discussed in this blog are not isolated environmental anomalies, but rather warning signs of a much larger crisis unfolding across the country. The question is no longer “Is climate change real?” but rather “How fast can India adapt before the damage becomes irreversible?” The urgency to build climate resilience, protect natural ecosystems, and shift towards sustainable practices has never been greater. If India fails to act now, millions more will be displaced, food and water shortages will worsen, and economic instability will deepen.<br><br></p>
+                <p>The path forward is clear—invest in climate-resilient infrastructure, restore forests, conserve water, and aggressively cut carbon emissions. Policymakers, businesses, and individuals must all play a role in shaping India’s climate future. The next two decades will determine whether India can weather the storm or be consumed by it. The time for debate has passed; the time for action is now. </p>
+            </div>
+        </article>
+    </main>
     <script>
         // List of district names (you can add more district names as needed)
-        const districts = [
+        const Assam_districts = [
             "Barpeta", "Bongaigaon", "Cachar", "Darrang", "Dhemaji", "Dhubri", "Dibrugarh", "Goalpara", "Golaghat",
             "Hailakandi", "Jorhat", "Kamrup", "Karbi Anglong", "Karimganj", "Kokrajhar", "Lakhimpur", "Marigaon",
             "Nagaon", "Nalbari", "Sibsagar", "Sonitpur", "Tinsukia"
         ];
 
+        const Kerala_districts = [
+            "Alappuzha", "Ernakulam", "Idukki", "Kannur", "Kasaragod", "Kollam", "Kottayam", "Kozhikode", "Malappuram",
+            "Palakkad", "Pathanamthitta", "Thiruvananthapuram", "Thrissur", "Wayanad"
+        ];
+
+        const Rajasthan_districts = [
+            "Ajmer", "Alwar", "Banswara", "Baran", "Barmer", "Bharatpur", "Bhilwara", "Bikaner", "Bundi", "Chittorgarh",
+            "Churu", "Dausa", "Dholpur", "Dungarpur", "Hanumangarh", "Jaipur", "Jaisalmer", "Jalore", "Jhalawar",
+            "Jhunjhunu", "Jodhpur", "Karauli", "Kota", "Nagaur", "Pali",  "Rajsamand", "Sawai Madhopur",
+            "Sikar", "Sirohi", "Tonk", "Udaipur"
+        ];
+
+        const Uttarakhand_districts = [
+            "Almora", "Bageshwar", "Chamoli", "Champawat", "Dehradun", "Haridwar", "Nainital", "Pauri Garhwal",
+            "Pithoragarh", "Rudraprayag", "Tehri Garhwal", "Udham Singh Nagar", "Uttarkashi"
+        ];
+
+        const Madhya_Pradesh_districts = [
+             "Anuppur", "Ashoknagar", "Balaghat", "Barwani", "Betul", "Bhind", "Bhopal",
+            "Burhanpur", "Chhatarpur", "Chhindwara", "Damoh", "Datia", "Dewas", "Dhar", "Dindori", "Guna", "Gwalior",
+            "Harda", "Hoshangabad", "Indore", "Jabalpur", "Jhabua", "Katni",  "Mandla", "Mandsaur",
+            "Morena", "Narsinghpur", "Neemuch", "Panna", "Raisen", "Rajgarh", "Ratlam", "Rewa", "Sagar", "Satna",
+            "Sehore", "Seoni", "Shahdol", "Shajapur", "Sheopur", "Shivpuri", "Sidhi",  "Tikamgarh",
+            "Ujjain", "Umaria", "Vidisha","West Nimar"
+        ];
+
         // Populate the dropdown menu with district names
-        const districtSelect = document.getElementById("district-select");
-        districts.forEach(district => {
-            const option = document.createElement("option");
-            option.value = district;
-            option.textContent = district;
-            districtSelect.appendChild(option);
-        });
+        function populateDropdown(districts, selectId) {
+            const districtSelect = document.getElementById(selectId);
+            districts.forEach(district => {
+                const option = document.createElement("option");
+                option.value = district;
+                option.textContent = district;
+                districtSelect.appendChild(option);
+            });
+        }
+
+        // Populate dropdowns for each state
+        populateDropdown(Assam_districts, "assam-district-select");
+        populateDropdown(Kerala_districts, "kerala-district-select");
+        populateDropdown(Rajasthan_districts, "rajasthan-district-select");
+        populateDropdown(Uttarakhand_districts, "uttarakhand-district-select");
+        populateDropdown(Madhya_Pradesh_districts, "madhya-pradesh-district-select");
 
         // Function to update the plot based on the selected district
-        function updatePlot() {
-            const selectedDistrict = districtSelect.value;
-            const plotImage = document.getElementById("plot-image");
+        function updateAssamPlot() {
+            const selectedDistrict = document.getElementById("assam-district-select").value;
+            const plotImage = document.getElementById("assam-plot-image");
             if (selectedDistrict) {
-                plotImage.src = `/Users/prreddy/Projects/Blog/plots/Assam_district_combined_plots/${selectedDistrict}_combined_trends.png`;
+                plotImage.src = `plots/Assam_district_combined_plots/${selectedDistrict}_combined_trends.png`;
                 plotImage.alt = `${selectedDistrict} Combined Trends Plot`;
             } else {
-                plotImage.src = "/Users/prreddy/Projects/Blog/plots/Assam_yearly_climate_trends.png";
+                plotImage.src = `plots/Assam_yearly_climate_trends.png`;
                 plotImage.alt = "Select a district to view the plot";
             }
         }
+
+        // Function to update the plot for Kerala
+        function updateKeralaPlot() {
+            const selectedDistrict = document.getElementById("kerala-district-select").value;
+            const plotImage = document.getElementById("kerala-plot-image");
+            if (selectedDistrict) {
+                plotImage.src = `plots/Kerala_district_combined_plots/${selectedDistrict}_combined_trends.png`;
+                plotImage.alt = `${selectedDistrict} Combined Trends Plot`;
+            } else {
+                plotImage.src = `plots/Kerala_yearly_climate_trends.png`;
+                plotImage.alt = "Select a district to view the plot";
+            }
+        }
+
+        // Function to update the plot for Rajasthan
+        function updateRajasthanPlot() {
+            const selectedDistrict = document.getElementById("rajasthan-district-select").value;
+            const plotImage = document.getElementById("rajasthan-plot-image");
+            if (selectedDistrict) {
+                plotImage.src = `plots/rajasthan_district_combined_plots/${selectedDistrict}_combined_trends.png`;
+                plotImage.alt = `${selectedDistrict} Combined Trends Plot`;
+            } else {
+                plotImage.src = `plots/Rajasthan_yearly_climate_trends.png`;
+                plotImage.alt = "Select a district to view the plot";
+            }
+        }
+
+        // Function to update the plot for Uttarakhand
+        function updateUttarakhandPlot() {
+            const selectedDistrict = document.getElementById("uttarakhand-district-select").value;
+            const plotImage = document.getElementById("uttarakhand-plot-image");
+            if (selectedDistrict) {
+                plotImage.src = `plots/uttarakhand_district_combined_plots/${selectedDistrict}_combined_trends.png`;
+                plotImage.alt = `${selectedDistrict} Combined Trends Plot`;
+            } else {
+                plotImage.src = `plots/Uttarakhand_yearly_climate_trends.png`;
+                plotImage.alt = "Select a district to view the plot";
+            }
+        }
+
+        // Function to update the plot for Madhya Pradesh
+        function updateMadhyaPradeshPlot() {
+            const selectedDistrict = document.getElementById("madhya-pradesh-district-select").value;
+            const plotImage = document.getElementById("madhya-pradesh-plot-image");
+            if (selectedDistrict) {
+                plotImage.src = `plots/Madhya Pradesh_district_combined_plots/${selectedDistrict}_combined_trends.png`;
+                plotImage.alt = `${selectedDistrict} Combined Trends Plot`;
+            } else {
+                plotImage.src = `plots/Madhya Pradesh_yearly_climate_trends.png`;
+                plotImage.alt = "Select a district to view the plot";
+            }
+        }
+        const startYear = 2000;
+        const endYear = 2020;
+        const imageFolder = 'Maps/';
+        const imagePrefix = 'India_temp_';
+        const imageSuffix = '.png';
+        const displayDuration = 1000; // Duration to display each image in milliseconds
+
+        let currentYear = startYear;
+        const timelapseImage = document.getElementById('timelapse');
+        const yearDisplay = document.getElementById('year');
+
+        function updateImage() {
+            const imagePath = `${imageFolder}${imagePrefix}${currentYear}${imageSuffix}`;
+            timelapseImage.src = imagePath;
+            yearDisplay.textContent = currentYear;
+
+            currentYear++;
+            if (currentYear > endYear) {
+                currentYear = startYear;
+            }
+        }
+
+        setInterval(updateImage, displayDuration);
+        updateImage();
+        
     </script>
 </body>
 </html>
